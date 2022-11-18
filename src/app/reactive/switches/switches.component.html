@@ -1,0 +1,98 @@
+<h2>Reactive: Switches</h2>
+<hr>
+
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+
+    <!--Radio-->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Género</label>
+        
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input" 
+                    type="radio" 
+                    value="M"
+                    formControlName="genero"
+                    id="radioMasculino">
+                <label class="form-check-label" for="radioMasculino">
+                  Masculino
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" 
+                    type="radio" 
+                    value="F"
+                    formControlName="genero"
+                    id="radioFemenino">
+                <label class="form-check-label" for="radioFemenino">
+                  Femenino
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--Switch-->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Notificaciones</label>
+        
+        <div class="col-sm-9">
+            <div class="form-check form-switch mt-2">
+                <input class="form-check-input" 
+                    type="checkbox" 
+                    role="switch" 
+                    formControlName="notificaciones"
+                    id="switchNoti">
+                <label class="form-check-label" 
+                    for="switchNoti">
+                    Quiero recibir notificaciones
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--Check-->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"></label>
+        
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input" 
+                    type="checkbox" 
+                    value="" 
+                    id="checkTermino"
+                    formControlName="condiciones"
+                    required>
+                <label class="form-check-label" 
+                    for="checkTermino">
+                    Términos y condiciones
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--Boton-->
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="submit" 
+                class="btn btn-outline-info float-end">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+
+
+<span>Valor formulario</span>
+<pre>{{miFormulario.value | json}}</pre>
+
+<br/>
+
+<span>Formulario valido</span>
+<pre>{{miFormulario.valid}}</pre>
+
+<br/>
+
+<pre>persona: {{persona | json}}</pre>
+
+<pre>Condiciones: {{condiciones | json}}</pre>
+
